@@ -1,6 +1,6 @@
 # VuePress Blog Boilerplate
 
-[![Version](https://img.shields.io/badge/version-0.11.0--beta-orange.svg)](https://github.com/vuejs/events/blob/master/CHANGELOG.md) [![Netlify Status](https://api.netlify.com/api/v1/badges/de71217a-c091-4908-a913-d6415815c92d/deploy-status)](https://app.netlify.com/sites/vuepress-blog-boilerplate/deploys)
+
 
 This is an ever-changing and opinionated architecture that uses [VuePress](https://vuepress.vuejs.org) to power your blogging platform.
 
@@ -29,16 +29,12 @@ To provide a blueprint of how blogging is possible with [VuePress](https://vuepr
 
 ### Installation
 
-> If your plan is follow the tutorial all the way through to deployment, make sure you fork this project instead of simply cloning it!
-
-In your terminal, navigate to the desired directory where you want this project to live.
+clone repo
 
 ```bash
-# Clone the repo for local development
-git clone https://github.com/bencodezen/vuepress-blog-boilerplate.git
 
 # Change directory into project
-cd vuepress-blog-boilerplate
+cd <dir>
 
 # Install dependencies
 yarn
@@ -55,11 +51,5 @@ To check out the tutorial and docs, check out [the guide](https://vuepress-blog-
 
 ## Examples
 
-- [VuePress Blog Boilerplate Demo](https://vigorous-lovelace-5c861d.netlify.com/)
-- [BenCodeZen Blog](https://www.bencodezen.io)
+- [Blog](https://wjv.io/blog)
 
-## Hat Tip
-
-For those familiar with the [Vue.js](https://www.vuejs.org) ecosystem, you might be reminded of [Chris Fritz's](https://www.twitter.com/chrisvfritz) [Vue Enterprise Boilerplate](https://github.com/chrisvfritz/vue-enterprise-boilerplate) and you would be absolutely right. I thought the concept was brilliant and wanted to do something similar for the [VuePress](https://vuepress.vuejs.org) ecosystem since blogging is something that still requires a fair amount of configuration and knowledge in order to get started.
-
-And in case you didn't know, Chris Fritz is one of the core contributors to the incredible [Vue.js docs](https://vuejs.org/v2/guide/) that we all love so much. So if you would like to help support him so he can spend more time on creating awesome content for the Vue.js community, please support him by [becoming a sponsor on Patreon](https://www.patreon.com/chrisvuefritz). 
