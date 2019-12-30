@@ -8,9 +8,9 @@ blog: true
 tags:
     - JavaScript
 meta:
-    - name: description
+  - name: description
     content: stuff
-    - name: keywords
+  - name: keywords
     content: things
 ---
 
