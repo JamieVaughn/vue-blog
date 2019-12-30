@@ -56,4 +56,10 @@ To check out the tutorial and docs, check out [the guide](https://vuepress-blog-
 
 ## Git Push & Deployment with Travis CI
 
-The Local repo contains the development platform for Vuepress where all changes to posts/styles/etc are to be made. When satisfided with changes you must `git push --force` to trigger Travis CI to rebuild the branch and deploy it to Github pages. Do not `git pull` from origin as that will pull down only the built `/dist` folder contents that Travis CI deployed last.
+The Local repo contains the development platform for Vuepress where all changes to posts/styles/etc are to be made. To check that the Travis CI deployment will be successful, first, in your dev branch, be sure to run 
+```
+npm run docs:build
+```
+Correct any errors here before pushing.
+
+When satisfied with changes you must `git push --force` if on master or `git push origin dev` if on dev branch. to trigger Travis CI to rebuild the branch and deploy it to Github pages. Do not `git pull` from origin as that will pull down only the built `/dist` folder contents that Travis CI deployed last.
