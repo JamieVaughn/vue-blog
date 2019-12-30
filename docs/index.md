@@ -15,7 +15,7 @@ features:
 footer: Copyright © 2019-present Jamie Vaughn
 ---
 ```js
-const rethink = (c, b) => b ? rethink(c, --b) : [...💡]
+const rethink = (c, b) => b ? rethink(c, Math.abs(b)-1) : [...💡]
 const 💭 = rethink(💻, 🧠)
 function* thoughtGenerator(💭) {
     yield* [...💭]
