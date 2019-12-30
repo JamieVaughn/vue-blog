@@ -12,5 +12,5 @@ features:
   details: Minimal setup with markdown-centered project structure helps you focus on writing.
 - title: Vue.js Powered Engine
   details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop your theme with Vue
-footer: MIT Licensed | Created by BenCodeZen
+footer: MIT Licensed
 ---
