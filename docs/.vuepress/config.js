@@ -5,10 +5,8 @@ module.exports = {
 	description: 'A thought generator about programming practices',
 	base: '/blog/',
 	themeConfig: {
-		repo: 'https://wwww.github.com/jamievaughn/blog',
+		repo: 'https://github.com/jamievaughn/blog',
 		repoLabel: 'Repo',
-		editLinks: true,
-		editLinkText: 'Found a bug? Help me improve this page!',
 		nav: [
 			{ text: 'Home', link: '/' }, 
 			{ text: 'Blog', link: '/blog/' },

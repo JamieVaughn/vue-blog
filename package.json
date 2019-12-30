@@ -7,9 +7,9 @@
 		"dev": "vuepress dev docs",
 		"dev:docs": "vuepress dev docs",
 		"build": "vuepress build docs",
-    "build:docs": "vuepress build docs",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+		"build:docs": "vuepress build docs",
+		"docs:dev": "vuepress dev docs",
+		"docs:build": "vuepress build docs"
 	},
 	"dependencies": {},
 	"devDependencies": {
