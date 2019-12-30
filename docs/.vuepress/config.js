@@ -9,12 +9,11 @@ module.exports = {
 		repoLabel: 'Repo',
 		nav: [
 			{ text: 'Home', link: '/' }, 
-			{ text: 'Blog', link: '/blog/' },
+			{ text: 'Blog', link: '/posts/' },
 			{ text: 'Archive', link: '/archive/' },
 			{ text: 'Portfolio', link: 'https://wjv.io' }
 		],
 		logo: '/img/logo.png',
-		docsDir: 'src',
 		pageSize: 5,
 		startPage: 0
 	},

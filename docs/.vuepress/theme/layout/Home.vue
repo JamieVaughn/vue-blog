@@ -75,7 +75,6 @@ export default {
 
 .home
   padding $navbarHeight 2rem 0
-  max-width 960px
   margin 0px auto
   .hero
     text-align center
@@ -106,7 +105,7 @@ export default {
         background-color lighten($accentColor, 10%)
   .features
     border-top 1px solid $borderColor
-    padding 1.2rem 0
+    padding 1.2rem 5rem
     margin-top 2.5rem
     display flex
     flex-wrap wrap

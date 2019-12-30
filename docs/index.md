@@ -4,7 +4,7 @@ heroImage: /img/hero.jpg
 heroText: yield ✴️ star
 tagline: A thought generator
 actionText: Latest Posts →
-actionLink: /blog/
+actionLink: /posts/
 features:
 - title: Frontend Development
   details: HTML, CSS, Javascript and all the things that makes the web great!

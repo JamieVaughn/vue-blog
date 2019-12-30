@@ -6,7 +6,7 @@ excerpt: A thought experiment on what BEM CSS could look like as simply chained 
 type: post
 blog: true
 tags:
-    JavaScript
+    - JavaScript
 meta:
     name: Chained CSS Classes - A proposal
     content: A thought experiment on what BEM CSS could look like as simply chained classes
