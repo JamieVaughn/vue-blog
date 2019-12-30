@@ -9,7 +9,7 @@ module.exports = {
 		repoLabel: 'Repo',
 		nav: [
 			{ text: 'Home', link: '/' }, 
-			{ text: 'Blog', link: '/posts/' },
+			{ text: 'Posts', link: '/posts/' },
 			{ text: 'Archive', link: '/archive/' },
 			{ text: 'Portfolio', link: 'https://wjv.io' }
 		],
