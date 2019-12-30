@@ -8,8 +8,10 @@ blog: true
 tags:
     - JavaScript
 meta:
-    name: Chained CSS Classes - A proposal
-    content: A thought experiment on what BEM CSS could look like as simply chained classes
+    - name: description
+    content: stuff
+    - name: keywords
+    content: things
 ---
 
 # Title
