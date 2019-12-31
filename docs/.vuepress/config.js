@@ -13,7 +13,7 @@ module.exports = {
 			{ text: 'Archive', link: '/archive/' },
 			{ text: 'Portfolio', link: 'https://wjv.io' }
 		],
-		logo: '/assets/img/logo.png',
+		logo: '/logo.png',
 		pageSize: 5,
 		startPage: 0
 	},
@@ -37,6 +37,6 @@ module.exports = {
 	// 	'vuepress-plugin-janitor'
 	// ],
 	head: [
-		['link', { rel: 'icon', href: '/img/logo.png' }]
+		['link', { rel: 'icon', href: '/logo.png' }]
 	]
 }

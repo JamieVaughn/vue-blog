@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/img/hero.jpg
+heroImage: /hero.jpg
 heroText: yield ✴️ star
 tagline: A thought generator
 actionText: Latest Posts →
@@ -22,4 +22,5 @@ function rethink (c, b) {
 function* thoughtGenerator(💭) {
     yield* [...💭]
 }
+thoughtGenerator().next()
 ```
