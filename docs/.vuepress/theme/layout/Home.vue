@@ -77,8 +77,12 @@ export default {
   padding $navbarHeight 2rem 0
   margin 0px auto
   .hero
+    position relative
     text-align center
     img
+      position absolute
+      left 0
+      right 0
       max-height 280px
       display block
       margin 3rem auto 1.5rem
@@ -87,6 +91,7 @@ export default {
     h1, .description, .action
       margin 1.8rem auto
     .description
+      margin-bottom 200px
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
@@ -104,18 +109,24 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    border-top 1px solid $borderColor
     padding 1.2rem 5rem
     margin-top 2.5rem
     display flex
     flex-wrap wrap
     align-items flex-start
     align-content stretch
-    justify-content space-between
+    justify-content center
   .feature
     flex-grow 1
-    flex-basis 30%
+    flex-basis 25%
     max-width 30%
+    padding 1rem
+    margin 0.5rem
+    text-align center
+    background-color #333;
+    border-radius 0.25rem
+    box-shadow 0px 0px 8px lightgrey
+    min-width 180px
     h2
       font-size 1.4rem
       font-weight 500
@@ -124,6 +135,7 @@ export default {
       color lighten($textColor, 10%)
     p
       color lighten($textColor, 25%)
+      min-height 80px
   .footer
     padding 2.5rem
     border-top 1px solid $borderColor
