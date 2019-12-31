@@ -13,7 +13,7 @@ module.exports = {
 			{ text: 'Archive', link: '/archive/' },
 			{ text: 'Portfolio', link: 'https://wjv.io' }
 		],
-		logo: '/img/logo.png',
+		logo: '/assets/img/logo.png',
 		pageSize: 5,
 		startPage: 0
 	},

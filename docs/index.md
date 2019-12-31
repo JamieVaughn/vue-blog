@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/hero.jpg
+heroImage: /assets/img/hero.jpg
 heroText: yield ✴️ star
 tagline: A thought generator
 actionText: Latest Posts →
