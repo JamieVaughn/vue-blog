@@ -79,6 +79,7 @@ export default {
   .hero
     position relative
     text-align center
+    z-index 1
     img
       position absolute
       left 0
@@ -86,6 +87,7 @@ export default {
       max-height 280px
       display block
       margin 3rem auto 1.5rem
+      z-index -1
     h1
       font-size 3rem
     h1, .description, .action
