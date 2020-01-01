@@ -19,7 +19,7 @@ const 💭 = rethink(💻, 🧠)
 function rethink (c, b) {
     return b ? rethink(c, Math.abs(b)-1) : [...💡]
 }
-function* thoughtGenerator(💭) {
+function* thoughtGenerator() {
     yield* [...💭]
 }
 thoughtGenerator().next()
