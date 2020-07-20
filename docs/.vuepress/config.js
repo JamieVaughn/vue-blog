@@ -14,7 +14,7 @@ module.exports = {
 			{ text: 'Portfolio', link: 'https://wjv.io' }
 		],
 		logo: '/logo.png',
-		pageSize: 5,
+		pageSize: 10,
 		startPage: 0
 	},
 	// plugins: [
