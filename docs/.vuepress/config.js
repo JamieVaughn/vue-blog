@@ -1,7 +1,7 @@
 const currentDateUTC = new Date().toUTCString()
 
 module.exports = {
-	title: 'yield ✴️star',
+	title: 'yield ✴️ star',
 	description: 'A thought generator about programming practices',
 	base: '/blog/',
 	themeConfig: {
