@@ -74,6 +74,7 @@ export default {
 @import '../styles/config.styl'
 
 .home
+  min-height 100vh
   padding $navbarHeight 2rem 0
   margin 0px auto
   .hero
@@ -111,11 +112,10 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    padding 1.2rem 5rem
-    margin-top 2.5rem
+    margin-top 5.5rem
     display flex
     flex-wrap wrap
-    align-items flex-start
+    align-items center
     align-content stretch
     justify-content center
   .feature

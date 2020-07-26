@@ -1,8 +1,15 @@
 <template>
+  <button
+    v-if="item.action"
+    class='cookie-mgr'
+    v-on:click="metomic()">
+    {{item.text}}
+    </button>
+
   <router-link
     class="nav-link"
     :to="link"
-    v-if="!isExternal(link) && !isXml(link)"
+    v-else-if="!isExternal(link) && !isXml(link)"
     :exact="exact"
   >{{ item.text }}</router-link>
   <a 
@@ -51,7 +58,10 @@ export default {
     isExternal,
     isMailto,
     isTel,
-    isXml
+    isXml,
+    metomic () {
+      window.Metomic('ConsentManager:show')
+    }
   }
 }
 </script>
