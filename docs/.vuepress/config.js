@@ -20,7 +20,7 @@ module.exports = {
 			}
 		],
 		logo: '/logo.png',
-		pageSize: 10,
+		pageSize: 20,
 		startPage: 0
 	},
 	plugins: [
