@@ -109,7 +109,7 @@ export default {
                 />
                 <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
                     <li>
-                        <button @click="addTag(tag)">{{ tag }}</button>
+                        <button @click="addTag(tag)" class="filter-tag">{{ tag }}</button>
                     </li>
                 </ul>
             </li>
@@ -146,6 +146,8 @@ export default {
 
 .blog-list__tags {
     margin-bottom: 15px;
+    display: inline-block;
+    list-style: none;
 }
 
 .button--pagination {
@@ -174,6 +176,12 @@ export default {
 
 .filtered-heading {
     display: flex;
+}
+
+.filter-tag {
+    background: #80008075;
+    border-radius: 3px;
+    border: 1px solid #800080;
 }
 
 .pagination {
