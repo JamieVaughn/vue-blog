@@ -179,9 +179,10 @@ export default {
 }
 
 .filter-tag {
-    background: #80008075;
-    border-radius: 3px;
+    background: #80008015;
+    border-radius: 25px;
     border: 1px solid #800080;
+    color: #800080;
 }
 
 .pagination {
