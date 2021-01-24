@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
     - JavaScript
+    - Functional
 meta:
   - name: description
     content: Composition over Inheritance and Revisiting the Null Object Pattern

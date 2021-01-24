@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
     - JavaScript
+    - Functional
 meta:
   - name: description
     content: A list of methods native to Javascript that conserve immutability of data.

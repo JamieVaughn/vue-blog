@@ -17,8 +17,6 @@ meta:
 ---
 
 
-#### Jamie Vaughn, Date
-
 Ad-hoc polymorphism is one term used to describe functions that execute different logic depending on the arity, or the number of parameters passed to it. It is also called a variable-arity function. Sometimes it is called function-overloading, mostly by detractors of this pattern. But this is a feature in many languages, especially functional paradigm languages. Languages like Elixir, Scheme and even Python support it.
 
 While Javascript does not have this as a first-class capability, I'll demonstrate how to work within Javascript's constraints to create an ad-hoc polymorphic function.
@@ -49,7 +47,7 @@ polyLog('msg')
 polyLog('msg', 5)
 polyLog('msg', 5, serverObj)
 ```
-So you can see we've leveraged a Javascript array and the fact that the number of parameters passed to a function is exposed via the `arguments` keyword within the function body. The number of arguments is accessed with `arguments.length - 1` and used to access the index of the array that contains the associated sub-function. The order of the sub-functions in the array must be carefully chosen to correspond with the arguments they need. That part is up the developer to ensure.
+So you can see we've leveraged a Javascript array and the fact that the number of parameters passed to a function is exposed via the `arguments` keyword within the function body. The appropriate index of the array is accessed with `arguments.length - 1` so the array evaluates to the associated sub-function. The order of the sub-functions in the array must be carefully chosen to correspond with the arguments they need. That part is up the developer to ensure.
 
 Encapsulating all of this logging functionality inside one function not only conveniently reduces the API surface for us, but it just makes more sense since it is all related behavior. It also improves maintainability by keeping the function definitions of all possible logging behavior co-located in one data structure. And during refactors, one fix ought to automatically propogate to all invocations of `polyLog` within the app. 
 
@@ -79,7 +77,7 @@ const polyLog = function(msg, priority, dest) {
 ```
 So now the array of sub-functions is defined once instead of each time `polyLog` is invoked, which saves on memory. And our function is also mostly just an abstraction layer wrapping our array that serves as our function-arity map.
 
-## Arrow Functions
+### Note On Arrow Functions
 
 It's important to note, this technique doesn't really work with arrow functions as they do not contain a reference to `arguments` in their function body. However, there is a hacky workaround by using the spread operator, although this should be avoided as the parameters necessarily will lose all or most of their semantic meaning.
 ```js
@@ -88,7 +86,7 @@ const polyLog = (...args) => arityMap[args.length - 1](...args)
 // Because we spread on args, we don't know what each parameter is called anymore
 ```
 
-### More Abstraction
+## More Abstraction
 
 Now that `polyLog` has been abstracted in the "Some Refactoring" section, it is starting to look more like a general API surface. But let's try to abstract it further. What if we allow the function-arity array to be passed in as a parameter as well so that we can define one `polymorph` function that could allow any array of functions be invoked with ad-hoc polymorphism?
 
@@ -99,10 +97,10 @@ function polymorph(array, ...args) {
 }
 ```
 
-I'm not sure if that level of abstraction would be useful... It may be taking it too far. We would lose some semantic naming to have one function name handle all of our ad-hoc polymorphic functions. But perhaps it could be more like a factory function that produces other ad-hoc polymorphic functions each with their own helpful names:
+A trade-off that has to be made here is spreading the `args` out because for this abstract case, we will not know how many parameters the functions will be needing. And so it suffers from not being able to make use of the `arguments` keyword as before. Instead we have to filter the args array to reveal how many parameters were actually passed. So I'm not sure if that level of abstraction would be useful... It may be taking it too far. We also lose some semantic naming to have one function name handle all of our ad-hoc polymorphic functions. Perhap, though, the benefit can be found in using it more like a factory function that produces other ad-hoc polymorphic functions each with their own helpful names:
 
 ```js
-// simpleLog, priotityLog & serverLog are defined as above
+// simpleLog, priorityLog & serverLog are defined as above
 const arityMap = [simpleLog, priorityLog, serverLog]
 const polyLog = (msg, priority, dest) => polymorph(arityMap, msg, priority, dest)
 // anotherArityMap is not defined, but you can imagine what it might be
@@ -131,7 +129,7 @@ function polyLog (msg, priority, dest) {
 
 We've changed how we are accessing the array index now to use the value of `arguments.length` without substracting `1` because now we've added a new sub-function that will execute when no parameters are passed. We also save a reference to `arguments.length` in the constant `nargs` (number of args) since we now access that value twice. Finally, we perform a quick comparison on `nargs` to catch the scenario where more than 3 parameters are passed. In such a case we pass a value of 4 so that a default function will be invoked for handling such errors. The sub-functions at positions 0 and 4 can be customized to handle those class of errors in the way best suited for your use case.
 
-If you absolutely want to remove the harded coded numbers `3` & `4`, then there's a change you can make to do so which uses the functions `.length` property. `.length` references the number of parameters that are in the function definition. So we can define a `const len` that takes that value and use that to compare against the number of parameters that were actually passed in `nargs`.
+If you absolutely want to remove the harded coded numbers `3` & `4`, then there's a change you can make to do so which uses the functions `.length` property, which references the number of parameters that are in the function definition. So we can define a `const len` that takes that value and uses that to compare against the number of parameters that were actually passed in `nargs`.
 
 ```js
 function polyLog (msg, priority, dest) {

@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
     - Javascript
+    - Functional
 meta:
   - name: description
     content: how to create a Null Object pattern in Javascript and what it is

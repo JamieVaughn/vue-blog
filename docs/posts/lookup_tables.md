@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
     - Javascript
+    - Functional
 meta:
   - name: description
     content: A few ways to create lookup tables in Javascript

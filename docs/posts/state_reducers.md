@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
     - JavaScript
+    - Functional
 meta:
   - name: description
     content: Coding simple finite state machine manager/reducers in three ways
