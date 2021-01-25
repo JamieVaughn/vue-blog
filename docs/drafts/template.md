@@ -14,6 +14,3 @@ meta:
     content: things
 ---
 
-# Title
-
-#### Jamie Vaughn, Date

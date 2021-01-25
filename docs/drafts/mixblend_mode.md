@@ -14,7 +14,4 @@ meta:
     content: things
 ---
 
-# Title
-
-#### Jamie Vaughn, Date
 https://codepen.io/heliocrat/pen/MWYRqZG
