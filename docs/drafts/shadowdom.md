@@ -27,3 +27,9 @@ examples
 https://codepen.io/heliocrat/pen/QWyoXzd
 
 https://codepen.io/heliocrat/pen/Yzwgoag?editors=1111
+
+https://codesandbox.io/s/web-component-forked-vt1j1?file=/index.html
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
