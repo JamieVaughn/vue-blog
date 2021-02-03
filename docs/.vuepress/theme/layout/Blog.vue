@@ -1,5 +1,7 @@
 <template>
   <div class="blog">
+    <Join env="post"/>
+
     <div class="blog__header">
       <p class="publish-date"><time :datetime="$frontmatter.date">{{ publishDate }}</time></p>
       <p v-if="$page.readingTime">Time to read: {{ $page.readingTime.text }}</p>
@@ -66,8 +68,10 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../util'
+import Join from '../../components/Join.vue'
 
 export default {
+  components: { Join },
   name: 'Blog',
 
   props: ['sidebarItems'],

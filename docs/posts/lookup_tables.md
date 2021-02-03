@@ -1,8 +1,8 @@
 ---
-title: Lookup Table Syntax Options in Javascript
+title: Lookup-Table Syntax Options in Javascript
 lang: en-US
 date: 2020-07-20 8:50:00
-excerpt: Let's see a few ways to create lookup tables in Javascript
+excerpt: Let's see a few ways to create lookup-tables in Javascript
 type: post
 blog: true
 tags:
@@ -10,18 +10,18 @@ tags:
     - Functional
 meta:
   - name: description
-    content: A few ways to create lookup tables in Javascript
+    content: A few ways to create lookup-tables in Javascript
   - name: keywords
-    content: Lookup Tables in Javascript
+    content: Lookup-Tables in Javascript
 ---
 
-Most event-based programming, whether it is for UI or not, needs a way to map some list of actions or inputs to blocks of logic to execute. Procedural Programming may not need this because the entire program is expected to run synchronously and in order. But when responding to events, code will not execute in a predictable order, which requires a good way to organize the possible blocks of logic that may need to run at these asynchronous times. The Asynchronicity, itself, is handled by other patterns (Promises, Futures, Observables Pub/Sub, etc.), but for organizing the callbacks of these patterns, lets take a look at some lookup table implementation patterns. These patterns appear commonly in state management libraries like Redux and XState to manage state, dispatchers, and actions which may be triggered or transformed within a user interface.
+Most event-based programming, whether it is for UI or not, needs a way to map some list of actions or inputs to blocks of logic to execute. Procedural Programming may not need this because the entire program is expected to run synchronously and in order. But when responding to events, code will not execute in a predictable order, which requires a good way to organize the possible blocks of logic that may need to run at these asynchronous times. The Asynchronicity, itself, is handled by other patterns (Promises, Futures, Observables Pub/Sub, etc.), but for organizing the callbacks of these patterns, lets take a look at some lookup-table implementation patterns. These patterns appear commonly in state management libraries like Redux and XState to manage state, dispatchers, and actions which may be triggered or transformed within a user interface.
 
-## A Few Options for Authoring Lookup Tables in JS
+## A Few Options for Authoring Lookup-Tables in JS
 
 * If statements (conventional or ternary)
 * Switch Statements
-* Objects/Maps (Lookup Tables)
+* Objects/Maps (Lookup-Tables)
 
 First we have the humble `if` statement control flow implementation in both conventional and ternary syntax:
 
@@ -49,7 +49,7 @@ function getSoundConv(str){
 ```
 Control flow implementations necessarily introduces [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) meaning there is branching logic within one's code. This is considered somewhat of a code smell in the Functional Paradigm because it imposes a cost on code readability. The next two implementations avoid the control flow pattern and thus reduce cyclomatic complexity. They make it eaiser to map pieces of UI directly to blocks of logic, rather than routing multiple UI element events through one imperative block of logic that the control flow must untangle.
 
-The first of the "non-control flow" options is a lookup table implemented via a `switch` statement:
+The first of the "non-control flow" options is a lookup-table implemented via a `switch` statement:
 
 ```js
 function switchSound(str) {
@@ -63,7 +63,7 @@ function switchSound(str) {
   }
 }
 ```
-And next we have an example of a lookup table function using a simple object factory:
+And next we have an example of a lookup-table function using a simple object factory:
 
 ```js
 function factorySound(str) {
@@ -118,7 +118,7 @@ Perhaps the key distinction is the `switch` statement has more flexibility than 
 
 A common use case for this pattern is for mapping blocks of code to execute for each UI element that triggers an event. A pitfall that leads to unnecessary cyclomatic complexity is relying on a single function as a callback when any one of an entire set of buttons is clicked. This callback would typically work out which code to execute within the function by using control flow to check either some background global state or checking some flag parameter that is passed in. 
 
-The lookup table pattern lets us separate out the logic of determining which code block to execute into its own structure (i.e. one of the lookup functions above). Then the return value from that lookup table funciton would, ultimately, be the code block that needs to be executed as a result of the triggering event. Emerging from this pattern is that the control flow mentioned in the previous paragraph simply falls away if the UI is setup accordingly. The UI element can contain the enum value that will be passed in the event object that bubbles and the lookup table can retrieve the correct function without any control flow using the event object properties. This is what is meant by "pushing cyclomatic complexity out". The logic branching still technically exists in the program, but we've pushed it all the way into the UI layer (instead of it being in the business logic layer) which simplifies our code. Since the branch now implicitly occurs before the moment of user input, the branch logic never explicitly appears in the code itself.
+The lookup-table pattern lets us separate out the logic of determining which code block to execute into its own structure (i.e. one of the lookup functions above). Then the return value from that lookup-table funciton would, ultimately, be the code block that needs to be executed as a result of the triggering event. Emerging from this pattern is that the control flow mentioned in the previous paragraph simply falls away if the UI is setup accordingly. The UI element can contain the enum value that will be passed in the event object that bubbles and the lookup-table can retrieve the correct function without any control flow using the event object properties. This is what is meant by "pushing cyclomatic complexity out". The logic branching still technically exists in the program, but we've pushed it all the way into the UI layer (instead of it being in the business logic layer) which simplifies our code. Since the branch now implicitly occurs before the moment of user input, the branch logic never explicitly appears in the code itself.
 
 ##### An Example
 
@@ -138,7 +138,7 @@ The HTML might be something like this:
 
 <img src="" alt="animal" id="selection">
 ```
-And the javascript can use one of our lookup tables from before, which you'll notice we can easily extend with a new `bear` field. We can also keep unused fields without consequence, like `frog`, which might be used in another UI component but won't be used in this one, and it will safely be inert here:
+And the javascript can use one of our lookup-tables from before, which you'll notice we can easily extend with a new `bear` field. We can also keep unused fields without consequence, like `frog`, which might be used in another UI component but won't be used in this one, and it will safely be inert here:
 ```js
 function factorySound(str) {
   return {
@@ -157,6 +157,6 @@ function soundAction(str, sound) {
 }
 ```
 
-We've also added a new function called `soundAction`, which can be the composable function that holds the actual business logic code block that should be run upon the event being triggered. It can contain any arbitrary logic, and of course different functions can be mapped to different lookup table fields as needed for customizability. In this example, the busines logic just logs the animal sound and populates an image of the animal from a hypothetical animal picture API.
+We've also added a new function called `soundAction`, which can be the composable function that holds the actual business logic code block that should be run upon the event being triggered. It can contain any arbitrary logic, and of course different functions can be mapped to different lookup-table fields as needed for customizability. In this example, the busines logic just logs the animal sound and populates an image of the animal from a hypothetical animal picture API.
 
 With this kind of organization (which resembles the formalized Command Pattern), you'll notice there are no if statements and no conventional control flow which means we keep our cyclomatic complexity to a minimum. We've pushed all of the logic branching up the UI layer (which is as high as it can go) and we allow the event system itself to pass the information needed to run the correct code block.

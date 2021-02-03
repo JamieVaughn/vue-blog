@@ -1,7 +1,6 @@
 <template>
   <div class="page">
     <slot name="top"/>
-    
     <Content :custom="false"/>
 
     <div class="page-edit">

@@ -1,9 +1,6 @@
 <script>
 export default {
     name: 'GenUUID',
-    dataI() {
-        return;
-    },
     methods: {
         genUUID(event) {
             let url = URL.createObjectURL(new Blob());

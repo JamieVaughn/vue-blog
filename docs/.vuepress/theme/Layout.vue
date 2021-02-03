@@ -5,6 +5,19 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
+  <script>
+    function recaptchaCallback(){
+        document.querySelector('section form input[type=submit]').removeAttribute('disabled');
+    }
+    function dismissJoin(e, str){
+      if(str === 'success') {
+        window.localStorage.setItem('joinedwjv', 'success')
+        setTimeout(() => document.querySelector('#ContactMe').remove(), 200)
+      } else{
+        return document.querySelector('#ContactMe').remove()
+      }
+    }
+  </script>
     <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"

@@ -39,6 +39,7 @@
     </div>
 
     <Content custom/>
+    <Join env="home"/>
 
     <div
       class="footer"
@@ -51,9 +52,10 @@
 
 <script>
 import NavLink from '../components/NavLink.vue'
+import Join from '../../components/Join.vue'
 
 export default {
-  components: { NavLink },
+  components: { NavLink, Join },
 
   computed: {
     data () {

@@ -2,7 +2,7 @@
 title: Javascript's Immutability Toolkit
 lang: en-US
 date: 2020-12-21 12:00:00
-excerpt: A list of methods native to Javascript that conserve immutability of data.
+excerpt: A conversation about methods native to Javascript that conserve immutability of data.
 type: post
 blog: true
 tags:
@@ -10,7 +10,7 @@ tags:
     - Functional
 meta:
   - name: description
-    content: A list of methods native to Javascript that conserve immutability of data.
+    content: A conversation about methods native to Javascript that conserve immutability of data.
   - name: keywords
     content: Immutable, javascript, methods
 ---
