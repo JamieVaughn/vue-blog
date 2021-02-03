@@ -7,7 +7,9 @@
   >
   <script>
     function recaptchaCallback(){
-        document.querySelector('section form input[type=submit]').removeAttribute('disabled');
+      var live = document.querySelector('#time');
+      live.value = new Date();
+      document.querySelector('section form input[type=submit]').removeAttribute('disabled');
     }
     function dismissJoin(e, str){
       if(str === 'success') {
