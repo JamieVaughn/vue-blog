@@ -5,8 +5,8 @@ export default {
         joined: ''
     },
     props: ['env'],
-    beforeCreate: function() {
-        let status = window.localStorage.getItem('joinedwjv')
+    mounted: function() {
+        let status = (window || globalThis).localStorage.getItem('joinedwjv')
         if(status === 'success') this.joined = true
     },
     methods: {
