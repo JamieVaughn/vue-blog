@@ -1,16 +1,10 @@
 <script>
 export default {
     name: 'Join',
-    data: {
-        joined: '',
-        currentPage: ''
-    },
     props: ['env'],
     mounted: function() {
-        this.currentPage = (window || globalThis).location.href
-        console.log(this.currentPage)
         let status = (window || globalThis).localStorage.getItem('joinedwjv')
-        if(status === 'success') this.joined = true
+        if(status === 'success') dismissJoin()
     },
     methods: {
         recaptchaCallback(){
@@ -20,7 +14,7 @@ export default {
 }
 </script>
 <template>
-    <section id="ContactMe" href="#ContactMe" v-bind:class="{hidden: joined}">
+    <section id="ContactMe" href="#ContactMe">
         
         <form id="ajax-contact" method="post" v-bind:class="env"
         action="https://getsimpleform.com/messages?form_api_token=8d73f78e270ace7eeda7529329d6a348">

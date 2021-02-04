@@ -5,9 +5,7 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-  <script>
-    let status = (window || globalThis).localStorage.getItem('joinedwjv')
-    if(status === 'success') dismissJoin()
+  <script defer>
     function recaptchaCallback(){
       var live = document.querySelector('#time');
       live.value = new Date();
