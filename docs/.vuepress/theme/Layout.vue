@@ -6,15 +6,18 @@
     @touchend="onTouchEnd"
   >
   <script>
+    let status = (window || globalThis).localStorage.getItem('joinedwjv')
+    if(status === 'success') dismissJoin()
     function recaptchaCallback(){
       var live = document.querySelector('#time');
       live.value = new Date();
+      document.querySelector('[name=redirect_to]').value = (window || globalThis).location.href
       document.querySelector('section form input[type=submit]').removeAttribute('disabled');
     }
     function dismissJoin(e, str){
       if(str === 'success') {
         (window || globalThis).localStorage.setItem('joinedwjv', 'success')
-        setTimeout(function() { document.querySelector('#ContactMe').remove() }, 200)
+        return document.querySelector('#ContactMe').remove()
       } else{
         return document.querySelector('#ContactMe').remove()
       }

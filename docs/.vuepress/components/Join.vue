@@ -24,7 +24,7 @@ export default {
         
         <form id="ajax-contact" method="post" v-bind:class="env"
         action="https://getsimpleform.com/messages?form_api_token=8d73f78e270ace7eeda7529329d6a348">
-            <input type='hidden' name='redirect_to' v-bind:value="currentPage" />
+            <input type='hidden' name='redirect_to' id="redirect" value="https://wjv.io/blog" />
             <input type='hidden' name="time" id="time" />
             <h3>Join for updates by email! <span class='dismiss' onclick="dismissJoin()">╳</span></h3>
             <div id="form-feedback" class="hidden">Submitted successfully! Thank you! I'll be in touch shortly.</div>
