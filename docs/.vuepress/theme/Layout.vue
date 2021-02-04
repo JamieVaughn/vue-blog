@@ -17,7 +17,6 @@
     function dismissJoin(e, str){
       if(str === 'success') {
         (window || globalThis).localStorage.setItem('joinedwjv', 'success')
-        return document.querySelector('#ContactMe').remove()
       } else{
         return document.querySelector('#ContactMe').remove()
       }
